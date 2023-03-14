@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nome": "Dinis Estrada",
+      "ocupacao": "Programador",
+      "email": "dinis.estrada37@gmail.com"
+    },
+    {
+      "id": "2",
+      "nome": "Emanuel Silva",
+      "ocupacao": "Comediante",
+      "email": "emanuel@sapo.pt"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "desc": "fazer tpc4 ew",
+      "autor": "Dinis Estrada",
+      "deadline": "2023-03-13",
+      "feito": 1,
+      "data": "2023-03-13T23:55"
+    },
+    {
+      "id": "2",
+      "desc": "fazer tpc4 pl",
+      "autor": "Dinis Estrada",
+      "deadline": "2023-03-17"
+    }
+  ]
+}
