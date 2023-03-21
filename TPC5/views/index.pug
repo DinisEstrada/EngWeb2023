@@ -1,0 +1,95 @@
+extends layout
+
+block content
+  header.w3-container.w3-center.w3-deep-purple
+    h1
+      b To Do List
+  main.w3-center
+    div.w3-cell-row
+      div.w3-container.w3-cell.w3-deep-purple.w3-border(style="width:40%")
+        h3.w3-margin-top
+          b New Task
+        form.w3-container.w3-center.w3-margin(action="/tasks/registo" method="POST")
+          input(type="hidden" name="id" value=maxTask)
+          label
+            p.w3-center.w3-round
+              div.w3-xxlarge
+                i(class="fas fa-edit")
+          input.w3-input.w3-border.w3-margin-bottom.w3-center.w3-round(type="text" name="desc")
+          label
+            p.w3-round 
+              div.w3-xxlarge
+                i(class="fas fa-user-alt")
+          select.w3-select.w3-border.w3-round(name="autor")
+            option.w3-center(value="" disabled selected) Choose person
+            each u in users
+              option.w3-center #{u.nome}
+          label
+            p.w3-round 
+              div.w3-xxlarge
+                i(class="fas fa-calendar-alt")
+          input.w3-input.w3-border.w3-round.w3-center(type="date" name="deadline")
+          button.w3-btn.w3-round.w3-aqua.w3-margin-top(type="submit") Add Task 
+      div.w3-container.w3-cell(style="width:10%")
+      div.w3-container.w3-cell.w3-deep-purple.w3-border(style="width:40%")
+        h3.w3-margin-top 
+          b Add User
+        form.w3-container.w3-center.w3-margin(action="/users/registo" method="POST")
+          input(type="hidden" name="id" value=maxUser)
+          label
+            p.w3-center.w3-round
+              div.w3-xxlarge
+                i(class="fas fa-id-card")
+          input.w3-input.w3-border.w3-margin-bottom.w3-center.w3-round(type="text" name="nome")
+          label
+            p.w3-round 
+              div.w3-xxlarge
+                i(class="fas fa-suitcase")
+          input.w3-input.w3-border.w3-margin-bottom.w3-center.w3-round(type="text" name="ocupacao")
+          label
+            p.w3-round 
+              div.w3-xxlarge
+                i(class="fas fa-envelope")
+          input.w3-input.w3-border.w3-round.w3-center(type="email" name="email")
+          button.w3-btn.w3-round.w3-aqua.w3-margin-top(type="submit") Add Task
+    div.w3-cell-row
+      div.w3-container.w3-cell.w3-deep-purple.w3-border(style="width=50%")
+        h3
+          b Tasks to be done
+        each task in tasks
+         if !("feito" in task)
+          div.w3-container.w3-grey.w3-center.w3-round.w3-margin-top
+            p.w3-right-align
+              a(href="/tasks/edit/" + task.id)
+                b Edit |
+              a(href="/tasks/delete/" + task.id)
+                b Delete |
+              a(href="/tasks/done/" + task.id)
+                b Done
+            p
+              b Description: #{task.desc}
+            p
+              b Autor: #{task.autor}
+            p
+              b Deadline: #{task.deadline}
+      div.w3-container.w3-cell.w3-deep-purple.w3-border(style="width:50%")
+        h3
+          b Completed Tasks 
+        each task in tasks
+         if "feito" in task
+          div.w3-container.w3-grey.w3-center.w3-round.w3-margin-top
+            p.w3-right-align
+              a(href="/tasks/delete/" + task.id)
+                b Delete 
+            p
+              b Description: #{task.desc}
+            p
+              b Autor: #{task.autor}
+            p
+              b Date: #{task.data}
+  footer.w3-container.w3-deep-purple
+    h5.w3-center TPC5 de EW por
+      b  Dinis Estrada
+
+    
+      

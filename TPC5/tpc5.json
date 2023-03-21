@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nome": "Dinis Estrada",
+      "ocupacao": "Programador",
+      "email": "dinis.estrada37@gmail.com"
+    },
+    {
+      "id": "2",
+      "nome": "Emanuel Silva",
+      "ocupacao": "Comediante",
+      "email": "emanuel@sapo.pt"
+    },
+    {
+      "id": "3",
+      "nome": "Henrique",
+      "ocupacao": "fumador",
+      "email": "h@hotmail.com"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "desc": "fazer tpc4 ew",
+      "autor": "Dinis Estrada",
+      "deadline": "2023-03-13",
+      "feito": 1,
+      "data": "2023-03-13T23:55"
+    },
+    {
+      "id": "3",
+      "desc": "Dormir 8 horas",
+      "autor": "Dinis Estrada",
+      "deadline": "2023-03-21",
+      "feito": 1,
+      "data": "2023-03-21"
+    },
+    {
+      "id": "4",
+      "desc": "tpc6",
+      "autor": "Dinis Estrada",
+      "deadline": "2023-04-04"
+    },
+    {
+      "id": "5",
+      "desc": "tpc5",
+      "autor": "Emanuel Silva",
+      "deadline": "2023-03-22"
+    }
+  ]
+}
